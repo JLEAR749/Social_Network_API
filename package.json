@@ -1,0 +1,27 @@
+{
+  "name": "social_network_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js", 
+    "start": "node server.js"    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JLEAR749/Social_Network_API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JLEAR749/Social_Network_API/issues"
+  },
+  "homepage": "https://github.com/JLEAR749/Social_Network_API#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.1"
+  }
+}
