@@ -1,41 +1,39 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 const reactionSchema = require('./Reaction');
 
 const thoughtSchema = new Schema(
   {
-    courseName: {
+    thoughtText: {
+      type: String,
+      required: true,
+      minLength: 1,
+      maxLength: 200,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+      get: yyyy-MM-dd,
+    },
+    username: {
       type: String,
       required: true,
     },
-    inPerson: {
-      type: Boolean,
-      default: true,
-    },
-    reaction: [reactionSchema],
-    startDate: {
-      type: Date,
-      default: Date.now(),
-    },
-    endDate: {
-      type: Date,
-      // Sets a default value of 12 weeks from now
-      default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-    },
-    students: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    ],
+  reaction: [reactionSchema],
   },
   {
     toJSON: {
       virtuals: true,
+      getters: true,
     },
     id: false,
   }
 );
+
+thoughtSchema.virtual('reactionCount')
+.get(function () {
+  return this.reaction.length
+})
 
 const Thought = model('Thought', thoughtSchema);
 

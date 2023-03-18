@@ -5,16 +5,16 @@ const router = require('express').Router();
 //   createCourse,
 //   updateCourse,
 //   deleteCourse,
-// } = require('../../controllers/courseController.js');
+// } = require('../../controllers/user-Controller.js');
 
-// // /api/courses
-// router.route('/').get(getCourses).post(createCourse);
+// // /api/users
+// router.route('/').get(getUsers).post(createUser);
 
-// // /api/courses/:courseId
+// // /api/user/:userId
 // router
-//   .route('/:courseId')
+//   .route('/:userId')
 //   .get(getSingleCourse)
-//   .put(updateCourse)
-//   .delete(deleteCourse);
+//   .put(updateUser)
+//   .delete(deleteUser);
 
 module.exports = router;
