@@ -17,4 +17,6 @@ const router = require('express').Router();
 //   .put(updateThought)
 //   .delete(deleteThought);
 
+//router.route("/:thoughtId/reactions").post(addReaction).delete(deltetReaction);
+
 module.exports = router;
