@@ -2,7 +2,7 @@ const { User, Thought } = require('../models');
 const {populate} = require('../models/User');
 
 const userController ={
-  getAllUsers(req,res){
+  getUsers(req,res){
     User.find({})
     .populate({
       path:"thoughts",
@@ -35,7 +35,7 @@ const userController ={
       });
   },
   // update user by id
-  updateUser(req, res) {
+  createUser(req, res) {
     User.create(req.body)
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(500).json(err));
@@ -101,4 +101,4 @@ const userController ={
   },
 };
 
-module.exports = user-controller;
+module.exports = userController;

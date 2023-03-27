@@ -18,7 +18,7 @@ const thoughtController ={
 
 
   // create a single user
-  getThoughtById(req, res) {
+  getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
       .select('-__v')
       .then(async (dbthoughtData) =>
@@ -101,4 +101,4 @@ const thoughtController ={
   },
 };
 
-module.exports = user-controller;
+module.exports = thoughtController;
