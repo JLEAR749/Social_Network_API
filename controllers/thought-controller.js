@@ -15,9 +15,7 @@ const thoughtController ={
     });
   },
 
-
-
-  // create a single user
+  // create a single thought
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
       .select('-__v')
@@ -34,12 +32,13 @@ const thoughtController ={
         return res.status(500).json(err);
       });
   },
-  // get one thought by it's id
-  createThought(req, res) {
-    Thought.create(req.body)
-      .then((thoughtData) => res.json(thoughtData))
-      .catch((err) => res.status(500).json(err));
   },
+    // update thought
+    createThought(req, res) {
+      Thought.create(req.body)
+        .then((dbthoughtData) => res.json(dbthoughtData))
+        .catch((err) => res.status(500).json(err));
+    },
   // Delete a user
   deleteUser(req, res) {
     Thought.findOneAndRemove({ _id: req.params.thoughtId})
