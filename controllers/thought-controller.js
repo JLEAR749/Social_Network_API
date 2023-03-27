@@ -32,15 +32,14 @@ const thoughtController ={
         return res.status(500).json(err);
       });
   },
-  },
     // update thought
     createThought(req, res) {
       Thought.create(req.body)
         .then((dbthoughtData) => res.json(dbthoughtData))
         .catch((err) => res.status(500).json(err));
     },
-  // Delete a user
-  deleteUser(req, res) {
+  // Delete a thought
+  deleteThought(req, res) {
     Thought.findOneAndRemove({ _id: req.params.thoughtId})
       .then((dbthoughtData) =>
         !dbthoughtData
