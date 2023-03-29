@@ -12,12 +12,18 @@ const {
 router.route('/')
     .get(getUsers)
     .post(createUser)
-    .post(getSingleUser)
+    .get(getSingleUser)
 
 router
   .route('/:userId')
   .get(getSingleUser)
-  .put(createUser)
-  .delete(deleteUser);
+  .post(createUser)
+  .put(updateUser)
+  .delete(deleteUser)
+  
+
+router.route('/:userId/friends/:friendId')
+  .post(addFriend)
+  .delete(removeFriend)
 
 module.exports = router;
