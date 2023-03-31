@@ -1,4 +1,5 @@
 # Social Network API
+[Walkthrough](https://drive.google.com/file/d/1xVQZGYlBDYzk6gUwO0APf5BF_3FVIYPO/view)
 
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/siennameow/social-network-API/blob/main/LICENSE)
 
